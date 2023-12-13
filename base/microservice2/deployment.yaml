@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: microservice2
+  name: microservice2
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: microservice2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: microservice2
+    spec:
+      containers:
+        - name: 012345678901.dkr.ecr.eu-west-1.amazonaws.com/microservice2
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 800m
+              memory: 1536Mi
+            requests:
+              cpu: 200m
+              memory: 1536Mi

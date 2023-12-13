@@ -1,0 +1,8 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: microservice1
+  name: microservice1
+spec:
+  replicas: 4
